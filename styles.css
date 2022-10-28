@@ -7,4 +7,89 @@ grey - #95a5a6;
 red - #ee5253
 
 */
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
+body {
+  background-image: url("./assets/burger-friends.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+nav {
+  background-color: #0fb9b1; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3%;
+  height: 100%;
+}
+
+.main {
+  height: 400px;
+  width: 500px;
+  background-color: rgba(225, 225, 225, .9);
+}
+
+.display {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  color: black;
+}
+
+.add-recipe {
+  padding: 10px
+}
+
+.lets-cook {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 10%;
+    margin-top: 0;
+    background-color: #0fb9b1;
+  }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 2%;
+}
+
+form > h2 {
+  padding: 10%;
+  padding-bottom: 0;
+}
+
+span {
+    color: red;
+    padding-bottom: 10px;
+}
+
+.pot {
+    height: 125px;
+    width: 125px;
+}
+
+.hidden {
+  display: none;
+}
