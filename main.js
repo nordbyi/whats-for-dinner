@@ -1,7 +1,10 @@
 var buttonLetsCook = document.querySelector('.lets-cook')
+var buttonFavorites = document.querySelector('#favorite')
+var buttonDelete = document.querySelector('#delete')
 var form = document.querySelector('form')
 var dishSpace = document.querySelector('.recipe-text')
 var potImage = document.querySelector('.pot')
+var favoriteDishes = document.querySelector('.favorites-list')
 
 var meals = {
   desserts: ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs'],
@@ -11,6 +14,7 @@ var meals = {
 }
 
 var currentDish;
+var favorites = []
 
 buttonLetsCook.addEventListener('click', function(event) {
   event.preventDefault()
@@ -20,9 +24,16 @@ buttonLetsCook.addEventListener('click', function(event) {
   showDish()
 })
 
-function updateDish() {
-  dishSpace.children[1].innerText = currentDish
+
+
+function addToFavorites() {
+  if(!favorites.includes(currentDish) && currentDish !== 'Like, I\'m not adding this functionality, or something.') {
+    favorites.push(currentDish)
+  }
+  console.log(favorites)
 }
+
+
 
 function getRandomDish(dish) {
   var dish = meals[dish][randomIndex(meals[dish])]
