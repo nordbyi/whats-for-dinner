@@ -44,6 +44,7 @@ buttonDelete.addEventListener('click', function(event) {
   event.preventDefault()
   deleteFavorite()
   updateFavorites()
+  addToLocalStorage()
 })
 
 buttonViewFavorites.addEventListener('click', switchView)
@@ -54,7 +55,6 @@ function favoritesFromLocalStorage() {
 
 function addToLocalStorage() {
   localStorage.setItem('favorites', favorites)
-  console.log('from local storage: ', localStorage.getItem('favorites').split(','))
 }
 
 function switchView() {
@@ -70,14 +70,12 @@ function deleteFavorite() {
     favorites.splice(index, 1)
     formInputToDelete.value = ''
   }
-  console.log(favorites)
 }
 
 function addToFavorites() {
   if(!favorites.includes(currentDish) && currentDish !== 'Like, I\'m not adding this functionality, or something.') {
     favorites.push(currentDish)
   }
-  console.log(favorites)
 }
 
 function updateFavorites() {
