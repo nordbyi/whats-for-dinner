@@ -21,6 +21,11 @@ var meals = {
 var currentDish;
 var favorites = []
 
+window.addEventListener('load', function() {
+  favoritesFromLocalStorage()
+  updateFavorites()
+})
+
 buttonLetsCook.addEventListener('click', function(event) {
   event.preventDefault()
   var dish = [...form.children[1].children].filter(el => el.children[0].checked)[0].children[0].id
@@ -43,16 +48,20 @@ buttonDelete.addEventListener('click', function(event) {
 
 buttonViewFavorites.addEventListener('click', switchView)
 
-function switchView() {
-  favoritesView.classList.toggle('hidden')
-  mainFormView.classList.toggle('hidden')
-  mainDisplayView.classList.toggle('hidden')
-  buttonViewFavorites.innerText === 'View Favorites' ? buttonViewFavorites.innerText = 'Main Page' : buttonViewFavorites.innerText = 'View Favorites'
+function favoritesFromLocalStorage() {
+  favorites = localStorage.getItem('favorites').split(',')
 }
 
 function addToLocalStorage() {
   localStorage.setItem('favorites', favorites)
   console.log('from local storage: ', localStorage.getItem('favorites').split(','))
+}
+
+function switchView() {
+  favoritesView.classList.toggle('hidden')
+  mainFormView.classList.toggle('hidden')
+  mainDisplayView.classList.toggle('hidden')
+  buttonViewFavorites.innerText === 'View Favorites' ? buttonViewFavorites.innerText = 'Main Page' : buttonViewFavorites.innerText = 'View Favorites'
 }
 
 function deleteFavorite() {
