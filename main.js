@@ -32,6 +32,7 @@ buttonLetsCook.addEventListener('click', function(event) {
 buttonFavorites.addEventListener('click', function() {
   addToFavorites()
   updateFavorites()
+  addToLocalStorage()
 })
 
 buttonDelete.addEventListener('click', function(event) {
@@ -47,6 +48,11 @@ function switchView() {
   mainFormView.classList.toggle('hidden')
   mainDisplayView.classList.toggle('hidden')
   buttonViewFavorites.innerText === 'View Favorites' ? buttonViewFavorites.innerText = 'Main Page' : buttonViewFavorites.innerText = 'View Favorites'
+}
+
+function addToLocalStorage() {
+  localStorage.setItem('favorites', favorites)
+  console.log('from local storage: ', localStorage.getItem('favorites').split(','))
 }
 
 function deleteFavorite() {
