@@ -33,7 +33,14 @@ function addToFavorites() {
   console.log(favorites)
 }
 
+function updateFavorites() {
+  favoriteDishes.innerText = ''
+  favoriteDishes.innerText = favorites.join(', ')
+}
 
+function updateDish() {
+  dishSpace.children[1].innerText = currentDish
+}
 
 function getRandomDish(dish) {
   var dish = meals[dish][randomIndex(meals[dish])]
