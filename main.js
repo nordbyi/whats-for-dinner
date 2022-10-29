@@ -5,6 +5,7 @@ var form = document.querySelector('form')
 var dishSpace = document.querySelector('.recipe-text')
 var potImage = document.querySelector('.pot')
 var favoriteDishes = document.querySelector('.favorites-list')
+var formInputToDelete = document.querySelector('#delete-item-form')
 
 var meals = {
   desserts: ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs'],
@@ -28,6 +29,20 @@ buttonFavorites.addEventListener('click', function() {
   addToFavorites()
   updateFavorites()
 })
+
+buttonDelete.addEventListener('click', function(event) {
+  event.preventDefault()
+  deleteFavorite()
+  updateFavorites()
+})
+
+function deleteFavorite() {
+  var index = favorites.findIndex(el => el === formInputToDelete.value)
+  if (index !== -1) {
+    favorites.splice(index, 1)
+  }
+  console.log(favorites)
+}
 
 function addToFavorites() {
   if(!favorites.includes(currentDish) && currentDish !== 'Like, I\'m not adding this functionality, or something.') {
