@@ -40,6 +40,7 @@ function deleteFavorite() {
   var index = favorites.findIndex(el => el === formInputToDelete.value)
   if (index !== -1) {
     favorites.splice(index, 1)
+    formInputToDelete.value = ''
   }
   console.log(favorites)
 }
