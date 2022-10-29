@@ -40,9 +40,9 @@ buttonDelete.addEventListener('click', function(event) {
   updateFavorites()
 })
 
-buttonViewFavorites.addEventListener('click', viewFavorites)
+buttonViewFavorites.addEventListener('click', switchView)
 
-function viewFavorites() {
+function switchView() {
   favoritesView.classList.toggle('hidden')
   mainFormView.classList.toggle('hidden')
   mainDisplayView.classList.toggle('hidden')
