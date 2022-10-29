@@ -40,6 +40,15 @@ buttonDelete.addEventListener('click', function(event) {
   updateFavorites()
 })
 
+buttonViewFavorites.addEventListener('click', viewFavorites)
+
+function viewFavorites() {
+  favoritesView.classList.toggle('hidden')
+  mainFormView.classList.toggle('hidden')
+  mainDisplayView.classList.toggle('hidden')
+  buttonViewFavorites.innerText === 'View Favorites' ? buttonViewFavorites.innerText = 'Main Page' : buttonViewFavorites.innerText = 'View Favorites'
+}
+
 function deleteFavorite() {
   var index = favorites.findIndex(el => el === formInputToDelete.value)
   if (index !== -1) {
