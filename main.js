@@ -24,7 +24,10 @@ buttonLetsCook.addEventListener('click', function(event) {
   showDish()
 })
 
-
+buttonFavorites.addEventListener('click', function() {
+  addToFavorites()
+  updateFavorites()
+})
 
 function addToFavorites() {
   if(!favorites.includes(currentDish) && currentDish !== 'Like, I\'m not adding this functionality, or something.') {
