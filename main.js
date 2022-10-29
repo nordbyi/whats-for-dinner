@@ -51,6 +51,7 @@ buttonViewFavorites.addEventListener('click', switchView)
 
 function favoritesFromLocalStorage() {
   favorites = localStorage.getItem('favorites').split(',')
+  deleteFavorite()
 }
 
 function addToLocalStorage() {
@@ -89,7 +90,6 @@ function updateDish() {
 
 function getRandomDish(dish) {
   var dish = meals[dish][randomIndex(meals[dish])]
-  console.log(dish)
   currentDish = dish
 }
 
