@@ -4,19 +4,16 @@ var dishSpace = document.querySelector('.recipe-text')
 var potImage = document.querySelector('.pot')
 
 var meals = {
-  desserts: ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake,', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs'],
+  desserts: ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs'],
   mainDishes: ['Spaghetti and Meatballs', 'Pineapple Chicken', 'Shakshuka', 'Thai Yellow Curry', 'Bibimbap',  'Chicken Parmesean', 'Butternut Squash Soup', 'BBQ Chicken Burgers', 'Ramen', 'Empanadas', 'Chicken Fried Rice', 'Sheet Pan Fajitas', 'Margarita Pizza'],
-  sides: ['Miso Glazed Carrots', 'Coleslaw', 'Garden Salad', 'Crispy Potatoes', 'Sweet Potato Tots', 'Coconut Rice', 'Caeser Salad', 'Shrimp Summer Rolls', 'Garlic Butter Mushrooms', 'Hush Puppies']
+  sides: ['Miso Glazed Carrots', 'Coleslaw', 'Garden Salad', 'Crispy Potatoes', 'Sweet Potato Tots', 'Coconut Rice', 'Caeser Salad', 'Shrimp Summer Rolls', 'Garlic Butter Mushrooms', 'Hush Puppies'],
+  entireMeal: ['Like, I\'m not adding this functionality, or something.']
 }
-// var desserts = ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs']
-// var mainDishes = ['Spaghetti and Meatballs', 'Pineapple Chicken', 'Shakshuka', 'Thai Yellow Curry', 'Bibimbap',  'Chicken Parmesean', 'Butternut Squash Soup', 'BBQ Chicken Burgers', 'Ramen', 'Empanadas', 'Chicken Fried Rice', 'Sheet Pan Fajitas', 'Margarita Pizza']
-// var sides = ['Miso Glazed Carrots', 'Coleslaw', 'Garden Salad', 'Crispy Potatoes', 'Sweet Potato Tots', 'Coconut Rice', 'Caeser Salad', 'Shrimp Summer Rolls', 'Garlic Butter Mushrooms', 'Hush Puppies']
 
 var currentDish;
 
 buttonLetsCook.addEventListener('click', function(event) {
   event.preventDefault()
-  console.log([...form.children[1].children].filter(el => el.children[0].checked)[0].children[0].id)
   var dish = [...form.children[1].children].filter(el => el.children[0].checked)[0].children[0].id
   getRandomDish(dish)
   updateDish(currentDish)
@@ -28,9 +25,9 @@ function updateDish() {
 }
 
 function getRandomDish(dish) {
-    var dish = meals[dish][randomIndex(meals[dish])]
-    console.log(dish)
-    currentDish = dish
+  var dish = meals[dish][randomIndex(meals[dish])]
+  console.log(dish)
+  currentDish = dish
 }
 
 function showDish() {
@@ -39,6 +36,5 @@ function showDish() {
 }
 
 function randomIndex(arr) {
-    return Math.floor(Math.random() * arr.length)
+  return Math.floor(Math.random() * arr.length)
 }
-// console.log([...form.children[1].children].forEach(el => console.log(el.children[0].className)))
