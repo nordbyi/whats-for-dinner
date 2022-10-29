@@ -6,7 +6,7 @@
   <body>
     <nav class="flex-container flex-start">
       <h2><strong>What's for Dinner?</strong></h2>
-      <button class="add-recipe">ADD A RECIPE</button>
+      <button class="view-favorites">View Favorites</button>
     </nav>
     <main>
       <div class="main form">
@@ -45,11 +45,11 @@
           <button id="favorite" class="lets-cook">FAVORITE</button>
         </div>
       </div>
-      <div class="main favorites">
+      <div class="main favorites hidden">
+        <h1>Favorites</h1>
+        <p class="favorites-list"></p>
         <form>
-          <h1>Favorites</h1>
-          <p class="favorites-list"></p>
-          <input type="text">
+          <input type="text" id="delete-item-form">
           <button id="delete" class="lets-cook">Delete Item</button>
         </form>
       </div>
