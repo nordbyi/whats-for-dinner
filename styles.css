@@ -70,17 +70,27 @@ button {
 }
 
 .lets-cook {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin: 10%;
-    margin-top: 0;
-    background-color: #0fb9b1;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin: 10%;
+  margin-top: 0;
+  background-color: #0fb9b1;
 }
 
-.clear {
-  display: block;
+#favorite {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.view-favorites {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 ul {
@@ -97,13 +107,13 @@ form > h2 {
 }
 
 span {
-    color: red;
-    padding-bottom: 10px;
+  color: red;
+  padding-bottom: 10px;
 }
 
 .pot {
-    height: 125px;
-    width: 125px;
+  height: 125px;
+  width: 125px;
 }
 
 .hidden {
