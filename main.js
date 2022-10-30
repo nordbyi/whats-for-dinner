@@ -21,6 +21,11 @@ var meals = {
 var currentDish;
 var favorites = []
 
+window.addEventListener('load', function() {
+  favoritesFromLocalStorage()
+  updateFavorites()
+})
+
 buttonLetsCook.addEventListener('click', function(event) {
   event.preventDefault()
   var dish = [...form.children[1].children].filter(el => el.children[0].checked)[0].children[0].id
@@ -32,15 +37,26 @@ buttonLetsCook.addEventListener('click', function(event) {
 buttonFavorites.addEventListener('click', function() {
   addToFavorites()
   updateFavorites()
+  addToLocalStorage()
 })
 
 buttonDelete.addEventListener('click', function(event) {
   event.preventDefault()
   deleteFavorite()
   updateFavorites()
+  addToLocalStorage()
 })
 
 buttonViewFavorites.addEventListener('click', switchView)
+
+function favoritesFromLocalStorage() {
+  favorites = localStorage.getItem('favorites').split(',')
+  deleteFavorite()
+}
+
+function addToLocalStorage() {
+  localStorage.setItem('favorites', favorites)
+}
 
 function switchView() {
   favoritesView.classList.toggle('hidden')
@@ -55,14 +71,12 @@ function deleteFavorite() {
     favorites.splice(index, 1)
     formInputToDelete.value = ''
   }
-  console.log(favorites)
 }
 
 function addToFavorites() {
   if(!favorites.includes(currentDish) && currentDish !== 'Like, I\'m not adding this functionality, or something.') {
     favorites.push(currentDish)
   }
-  console.log(favorites)
 }
 
 function updateFavorites() {
@@ -76,7 +90,6 @@ function updateDish() {
 
 function getRandomDish(dish) {
   var dish = meals[dish][randomIndex(meals[dish])]
-  console.log(dish)
   currentDish = dish
 }
 
